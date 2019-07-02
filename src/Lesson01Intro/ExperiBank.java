@@ -27,7 +27,7 @@ public class ExperiBank {
         dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.experitest.ExperiBank");
         dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".LoginActivity");
         driver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"), dc);
-        driver.setLogLevel(Level.INFO);
+    //    driver.setLogLevel(Level.INFO);
     }
 
     @Test
