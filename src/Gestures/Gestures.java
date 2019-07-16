@@ -39,8 +39,9 @@ public class Gestures
         DoBefore1();
         try
         {
-            driver.swipe(find12inclock().getRect().getX(),find12inclock().getRect().getY(),find9inclock().getRect().getX(),find9inclock().getRect().getY(),1000);
-            driver.swipe(find15inclock().getRect().getX(),find15inclock().getRect().getY(),find45inclock().getRect().getX(),find45inclock().getRect().getY(),1000);
+            driver.swipe(find12inclock().getRect().getX(),find12inclock().getRect().getY(),find9inclock().getRect().getX(),find9inclock().getRect().getY(),2000);
+            Thread.sleep(2000);
+            driver.swipe(find15inclock().getRect().getX(),find15inclock().getRect().getY(),find45inclock().getCenter().getX(),find45inclock().getCenter().getY(),4000);
             assertEquals("9:45", TimeInClock());
         }
         catch (AssertionError e)
@@ -62,7 +63,7 @@ public class Gestures
     public void DoBefore1() throws InterruptedException
     {
 
-            driver.performTouchAction(action.tap(LocateViews()));
+        driver.performTouchAction(action.tap(LocateViews()));
             Thread.sleep(2000);
             driver.performTouchAction(action.tap(LocateDate()));
             Thread.sleep(2000);
@@ -72,11 +73,13 @@ public class Gestures
 
     public AndroidElement LocateViews()
     {
+        action=new TouchAction(driver);
         return driver.findElement(By.xpath("//*[@text='Views']"));
     }
 
     public AndroidElement LocateDate()
     {
+        action=new TouchAction(driver);
         return driver.findElement(By.xpath("//*[@text='Date Widgets']"));
     }
     public AndroidElement LocateInline()
