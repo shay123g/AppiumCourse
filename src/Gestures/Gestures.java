@@ -22,9 +22,9 @@ import static org.junit.jupiter.api.Assertions.*;
 public class Gestures
 {
 
-    protected AndroidDriver<AndroidElement> driver = null;
-    DesiredCapabilities dc;
-    TouchAction action;
+    public AndroidDriver<AndroidElement> driver = null;
+    public DesiredCapabilities dc;
+    public TouchAction action;
 
 
 
@@ -55,7 +55,6 @@ public class Gestures
     @Test
     public void Test02_Menu()
     {
-
         driver.pressKeyCode(AndroidKeyCode.BACK);
         driver.pressKeyCode(AndroidKeyCode.BACK);
         action=new TouchAction(driver);
